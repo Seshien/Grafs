@@ -152,11 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Gen.h" />
+    <ClInclude Include="GrafRepresentation.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Sorts.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Gen.cpp" />
+    <ClCompile Include="GrafRepresentation.cpp" />
     <ClCompile Include="Grafs.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
