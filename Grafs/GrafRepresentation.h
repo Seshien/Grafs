@@ -7,19 +7,19 @@ public:
 		white, grey, black
 	};
 
-	GrafRepresentation(const std::vector<std::pair<int, int>> & eL);
+	GrafRepresentation();
 	~GrafRepresentation();
 
-	std::vector<int> DFS_TopologicalSorting();
+	std::vector<int> DFS_TopologicalSorting(bool log = true)const;
 
-	bool DFS(int ver, std::map<int, VerticesColor> & verticesCol, std::vector<int>& res);
-
-	std::vector<int> DEL_TopologicalSorting();
+	std::vector<int> DEL_TopologicalSorting(bool log = true)const;
 
 private:
 
-	virtual std::vector<int> getVertices() = 0;
+	bool DFS(int ver, std::map<int, VerticesColor> & verticesCol, std::vector<int>& res, bool log)const;
 
-	virtual std::vector<int> getNeighbours(int v) = 0;
+	virtual std::vector<int> getVertices()const = 0;
+
+	virtual std::vector<int> getNeighbours(int v)const = 0;
 };
 

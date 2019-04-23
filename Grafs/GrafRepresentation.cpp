@@ -2,11 +2,15 @@
 #include "GrafRepresentation.h"
 
 
+GrafRepresentation::GrafRepresentation()
+{
+}
+
 GrafRepresentation::~GrafRepresentation()
 {
 }
 
-std::vector<int> GrafRepresentation::DFS_TopologicalSorting()
+std::vector<int> GrafRepresentation::DFS_TopologicalSorting(bool log)const
 {
 	std::vector<int> res;
 	std::map<int, VerticesColor> verticesCol;
@@ -18,17 +22,22 @@ std::vector<int> GrafRepresentation::DFS_TopologicalSorting()
 	for (auto x: v)
 	{
 		if (verticesCol[x] == VerticesColor::white)
-			if (this->DFS(v[0], verticesCol, res) == false)
+			if (this->DFS(x, verticesCol, res, log) == false)
 				return std::vector<int>{0};
-	}	
+	}
+	std::reverse(res.begin(), res.end());
 	return res;
 }
 
-bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol, std::vector<int>& res)
+bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol, std::vector<int>& res, bool log)const
 {
+	if(log)
+		std::cout << "Jestem w v = " << ver << std::endl;
 	if (verticesCol[ver] == VerticesColor::grey)
 	{
 		res = std::vector<int>{ 0 };
+		if (log)
+			std::cout << "Znaleziono petle" << std::endl;
 		return false;
 	}
 	if (verticesCol[ver] == VerticesColor::black)
@@ -38,7 +47,7 @@ bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol
 	auto neighbours = this->getNeighbours(ver);
 	for (auto x : neighbours)
 	{
-		if (DFS(x, verticesCol, res) == false)
+		if (DFS(x, verticesCol, res, log) == false)
 			return false;
 	}
 	verticesCol[ver] = VerticesColor::black;
@@ -46,7 +55,7 @@ bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol
 	return true;
 }
 
-std::vector<int> GrafRepresentation::DEL_TopologicalSorting()
+std::vector<int> GrafRepresentation::DEL_TopologicalSorting(bool log)const
 {
 	std::vector<int> res;
 	std::map<int, int> vIn;
@@ -60,11 +69,12 @@ std::vector<int> GrafRepresentation::DEL_TopologicalSorting()
 		for (auto d : this->getNeighbours(x))
 			vIn[d]++;
 	}
-
 	bool del = true;
-	while (del)
+	while(1)
 	{
-		bool del = false;
+		if (del == false)
+			break;
+		del = false;
 		auto it = v.begin();
 		while (it != v.end())
 		{
