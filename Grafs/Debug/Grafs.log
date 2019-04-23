@@ -4,13 +4,13 @@
   EdgeListGraph.cpp
   Gen.cpp
 c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(5): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(62): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(95): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(109): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(118): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(135): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(138): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(152): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(61): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(94): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(108): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(117): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(134): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(137): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(151): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   GrafRepresentation.cpp
   Grafs.cpp
   Generowanie kodu...

@@ -1,27 +1,14 @@
 #include "pch.h"
 
-std::vector<std::pair<int, int>> gen(int amount)
-{
-	std::srand(time(NULL));
-	std::vector<std::pair<int, int>> relations;
-	int sizeR = amount * (amount - 1) / 2;
-	for (int i = 0; i < sizeR; i++)
-	{
-		createR(relations,amount);
-		std::cout << "Relacja " << i + 1 << " stworzona. Pozostala ilosc: " << sizeR - (i + 1) << std::endl;
-	}
-	for (auto i : relations)
-		std::cout << "Relacja " << i.first << " : " << i.second << std::endl;
-	std::cout << "Tworzenie gotowe" << std::endl;
-	return relations;
-}
-void createR(std::vector<std::pair<int, int>> & relations,int nodes)
+bool createR(std::vector<std::pair<int, int>> & relations,int nodes)
 {
 	int node1, node2;
-	bool check = 0;
-	while (check==0)
+	int check = 1, failsafe=nodes*nodes*nodes;
+	while (check>0)
 	{
-		check = 0;
+		std::cout << "DFS Check: " << check << std::endl;
+		check++;
+		if (check > failsafe) return 1;
 		node1 = rand() % nodes;
 		node2 = rand() % nodes;
 		if (node1 == node2) continue;
@@ -29,19 +16,18 @@ void createR(std::vector<std::pair<int, int>> & relations,int nodes)
 			//if (exCheck(std::make_pair(node1, node2), relations)) continue;
 
 		relations.push_back(std::make_pair(node1, node2));
-		//std::cout << "DFS Check" << std::endl;
 		if (cycleCheckF(relations))
 		{
 			relations.pop_back();
 			continue;
 		}
-		check = 1;
+		check = 0;
 	}
-
+	return 0;
 }
+
 bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2)
 {
-
 	if (node1 == node2)
 	{
 		std::cout << "Nie mozna stworzyc takiej relacji" << std::endl;
@@ -56,24 +42,13 @@ bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2)
 	}
 	return 0;
 }
-//Sprawdza czy istnieje juz taka relacja
-bool exCheck(int value, const std::vector<int> & searched)
-{
-	for (int i = 0; i < searched.size(); i++)
-		if (value == searched[i])
-			return 1;
-	return 0;
-}
+
 //poczatkowy cycleCheck - Szuka wierzcholkow zerowych i dla kazdego z nich odpala cycleChecka
 bool cycleCheckF(const std::vector<std::pair<int, int>> & relations)
 {
-	//znajdujemy  wierzcholek bez rodzicow
 	std::vector<std::pair<int, int>> first = cycleSearch(relations);
 	if (first.empty())
-	{
-		//std::cout << "Nie mozna bylo znalezc wiercholka zerowego lub znaleziono krotka petle/multigraf." << std::endl;
 		return 1;
-	}
 	for (auto i : first)
 	{
 		if (cycleCheck(relations, i))
@@ -81,6 +56,7 @@ bool cycleCheckF(const std::vector<std::pair<int, int>> & relations)
 	}
 	return 0;
 }
+
 //Rozpoczyna sprawdzanie
 bool cycleCheck(const std::vector<std::pair<int, int>> & relations, std::pair<int, int> first)
 {
@@ -97,6 +73,7 @@ bool cycleCheck(const std::vector<std::pair<int, int>> & relations, std::pair<in
 			return 1;
 	return 0;
 }
+
 //Schodzenie nizej
 bool _cycleCheck(const std::vector<std::pair<int, int>> & relations, std::vector <int> searched, std::pair<int, int> first)
 {
@@ -111,6 +88,17 @@ bool _cycleCheck(const std::vector<std::pair<int, int>> & relations, std::vector
 			return 1;
 	return 0;
 }
+
+//Sprawdza czy istnieje juz taka relacja
+bool exCheck(int value, const std::vector<int> & searched)
+{
+	for (size_t i = 0; i < searched.size(); i++)
+		if (value == searched[i])
+			return 1;
+	return 0;
+}
+
+
 //wypisuje wszystkie relacje danego wierzcholka
 std::vector<std::pair<int, int>> cycleFind(const std::vector<std::pair<int, int>> & relations, int first)
 {
@@ -126,7 +114,8 @@ std::vector<std::pair<int, int>> cycleFind(const std::vector<std::pair<int, int>
 				nSearched.push_back(std::make_pair(relations[i].first, i));
 	return nSearched;
 }
-//szuka wierzcholka 0 stopnia
+
+//szuka wierzcholka 0 stopnia oraz sprawdza podstawowe warunki
 std::vector<std::pair<int, int>> cycleSearch(const std::vector<std::pair<int, int>> & relations)
 {
 	std::vector<std::pair<int, int>> first;
@@ -157,12 +146,9 @@ std::vector<std::pair<int, int>> cycleSearch(const std::vector<std::pair<int, in
 			continue;
 		}
 	}
-
-	//if (first.empty())
-		//std::cout << "Something broken" << std::endl;
 	return first;
-
 }
+
 //sprawdza czy istnieje cykl
 bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::vector<std::pair<int, int>> & nSearched, const std::vector <int> & searched)
 {
@@ -197,5 +183,50 @@ std::vector<std::pair<int, int>> loadGraf(size_t & number)
 		}
 	}
 	return graf;
-	
+}
+
+std::vector<std::pair<int, int>> manualGraf(size_t & number)
+{
+	int num1 = 1, num2 = 2;
+	std::vector<std::pair<int, int>> graph;
+	std::cout << "Podaj liczbe wierzcholkow." << std::endl;
+	std::cin >> number;
+	while (1)
+	{
+		std::cout << "Podaj relacje. By zakonczyc, podaj dwie te same liczby." << std::endl;
+		std::cin >> num1 >> num2;
+		if (num1 == num2)
+			break;
+		if (createN(graph, num1, num2))
+			std::cout << "Wystapil blad, relacja nie zostala dodana" << std::endl;
+	}
+	return graph;
+}
+
+std::vector<std::pair<int, int>> genGraf(int amount)
+{
+	std::srand(time(NULL));
+	std::vector<std::pair<int, int>> relations;
+	int sizeR = amount * (amount - 1) / 2;
+	int i = 0;
+	while (i < sizeR)
+	{
+		if (createR(relations, amount))
+		{
+			i = 0;
+			relations.clear();
+		}
+		else
+			i++;
+		std::cout << "Relacja " << i + 1 << " stworzona. Pozostala ilosc: " << sizeR - (i + 1) << std::endl;
+	}
+	showEdges(relations);
+	std::cout << "Tworzenie gotowe" << std::endl;
+	return relations;
+}
+
+void showEdges(const std::vector<std::pair<int, int>> & relations)
+{
+	for (auto i : relations)
+		std::cout << "Relacja " << i.first << " : " << i.second << std::endl;
 }
