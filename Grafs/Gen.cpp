@@ -4,6 +4,7 @@ bool createR(std::vector<std::pair<int, int>> & relations,int nodes)
 {
 	int node1, node2;
 	int check = 1, failsafe=nodes*nodes*nodes;
+	if (failsafe < 100) failsafe = 100;
 	while (check>0)
 	{
 		std::cout << "DFS Check: " << check << std::endl;
@@ -12,9 +13,6 @@ bool createR(std::vector<std::pair<int, int>> & relations,int nodes)
 		node1 = rand() % nodes;
 		node2 = rand() % nodes;
 		if (node1 == node2) continue;
-		//if (!(relations.empty()))
-			//if (exCheck(std::make_pair(node1, node2), relations)) continue;
-
 		relations.push_back(std::make_pair(node1, node2));
 		if (cycleCheckF(relations))
 		{
@@ -171,6 +169,8 @@ std::vector<std::pair<int, int>> loadGraf(size_t & number)
 		std::cout << "Nie uzyskano dostepu do pliku." << std::endl;
 		return graf;
 	}
+	else
+		std::cout << "Dostêp zosta³ uzyskany." << std::endl;
 	int n, v, node1, node2;
 	plik >> n >> v;
 	number = n;
@@ -218,7 +218,7 @@ std::vector<std::pair<int, int>> genGraf(int amount)
 		}
 		else
 			i++;
-		std::cout << "Relacja " << i + 1 << " stworzona. Pozostala ilosc: " << sizeR - (i + 1) << std::endl;
+		std::cout << "Relacja " << i << " stworzona. Pozostala ilosc: " << sizeR - i << std::endl;
 	}
 	showEdges(relations);
 	std::cout << "Tworzenie gotowe" << std::endl;

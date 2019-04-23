@@ -1,11 +1,12 @@
 ﻿  Gen.cpp
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(71): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(86): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(124): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(127): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(141): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(69): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(84): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(104): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(122): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(125): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(139): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(208): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Grafs.cpp
   Trwa generowanie kodu
   3 of 747 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
