@@ -17,8 +17,5 @@ private:
 	virtual std::vector<int> getVertices()const override;
 	virtual std::vector<int> getNeighbours(int v)const override;
 
-
-
-
 };
 

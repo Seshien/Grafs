@@ -1,18 +1,7 @@
-﻿  pch.cpp
-  AdjacencyListGraph.cpp
-  AdjacencyMatriceGraph.cpp
-  EdgeListGraph.cpp
-  Gen.cpp
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(69): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(84): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(104): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(122): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(125): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(139): warning C4018: '<': signed/unsigned mismatch
-d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(208): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  GrafRepresentation.cpp
-  Grafs.cpp
+﻿  AdjacencyMatriceGraph.cpp
   Generating code
-  All 750 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  2 of 750 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Grafs.vcxproj -> D:\Dokumenty\Private\studia\II Semestr\Algorytmy itd\Grafs\Grafs\Release\Grafs.exe
