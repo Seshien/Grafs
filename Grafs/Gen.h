@@ -17,4 +17,4 @@ std::vector<std::pair<int, int>> cycleSearch(const std::vector<std::pair<int, in
 
 bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::vector<std::pair<int, int>> & nSearched, const std::vector <int> & searched);
 
-std::vector<std::pair<int, int>> loadGraf();
+std::vector<std::pair<int, int>> loadGraf(size_t & number);

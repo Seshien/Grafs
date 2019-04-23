@@ -172,11 +172,30 @@ bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::v
 	return 0;
 }
 
-std::vector<std::pair<int, int>> loadGraf()
+std::vector<std::pair<int, int>> loadGraf(size_t & number)
 {
 	std::vector<std::pair<int, int>> graf;
-	std::fstream plik;
-	std::
+	std::ifstream plik;
+	std::string filename;
 	std::cout << "Prosze podac nazwe pliku" << std::endl;
-
+	std::cin >> filename;
+	plik.open(filename, std::ifstream::in);
+	if (plik.good() == 0)
+	{
+		std::cout << "Nie uzyskano dostepu do pliku." << std::endl;
+		return graf;
+	}
+	int n, v, node1, node2;
+	plik >> n >> v;
+	number = n;
+	for (int i = 0; i < v; i++)
+	{
+		plik >> node1 >> node2;
+		if (createN(graf, node1, node2))
+		{
+			std::cout << "Wystapil blad podczas dodawania krawedzi do grafu" << std::endl;
+		}
+	}
+	return graf;
+	
 }
