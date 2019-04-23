@@ -1,7 +1,8 @@
 #pragma once
 #include "pch.h"
 std::vector<std::pair<int, int>> gen(int amount);
-void createR(std::vector<int> & nodes, std::vector<std::pair<int, int>> & relations);
+void createR(std::vector<std::pair<int, int>> & relations, int nodes);
+bool createN(std::vector<std::pair<int, int>> & relations, int node1, int node2);
 
 bool exCheck(std::pair<int, int > rel, const std::vector<std::pair<int, int>> & relations);
 bool exCheck(int value, const std::vector<int> & searched);
@@ -12,7 +13,7 @@ bool cycleCheck(const std::vector<std::pair<int, int>> & relations, std::pair<in
 bool _cycleCheck(const std::vector<std::pair<int, int>> & relations, std::vector <int> searched, std::pair<int, int> first);
 
 
-void cycleFind(const std::vector<std::pair<int, int>> & relations, std::vector<std::pair<int, int>> & nSearched);
+//void cycleFind(const std::vector<std::pair<int, int>> & relations, std::vector<std::pair<int, int>> & nSearched);
 std::vector<std::pair<int, int>> cycleFind(const std::vector<std::pair<int, int>> & relations, int first);
 std::vector<std::pair<int, int>> cycleSearch(const std::vector<std::pair<int, int>> & relations);
 bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::vector<std::pair<int, int>> & nSearched, const std::vector <int> & searched);

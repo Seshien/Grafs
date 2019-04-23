@@ -3,36 +3,35 @@
 std::vector<std::pair<int, int>> gen(int amount)
 {
 	std::srand(time(NULL));
-	std::vector<int> nodes;
 	std::vector<std::pair<int, int>> relations;
-	for (int i = 0; i < amount; i++)
-		nodes.push_back(i);
 	int sizeR = amount * (amount - 1) / 2;
 	for (int i = 0; i < sizeR; i++)
 	{
-		createR(nodes, relations);
-		std::cout << "Relacja " << i << " stworzona. Pozostala ilosc: " << sizeR - i << std::endl;
+		createR(relations,amount);
+		std::cout << "Relacja " << i + 1 << " stworzona. Pozostala ilosc: " << sizeR - (i + 1) << std::endl;
 	}
+	for (auto i : relations)
+		std::cout << "Relacja " << i.first << " : " << i.second << std::endl;
 
 
 	std::cout << "Tworzenie gotowe" << std::endl;
 	return relations;
 }
-void createR(std::vector<int> & nodes, std::vector<std::pair<int, int>> & relations)
+void createR(std::vector<std::pair<int, int>> & relations,int nodes)
 {
 	int node1, node2;
 	bool check = 0;
 	while (check==0)
 	{
 		check = 0;
-		node1 = rand() % nodes.size();
-		node2 = rand() % nodes.size();
+		node1 = rand() % nodes;
+		node2 = rand() % nodes;
 		if (node1 == node2) continue;
 		//if (!(relations.empty()))
 			//if (exCheck(std::make_pair(node1, node2), relations)) continue;
 
 		relations.push_back(std::make_pair(node1, node2));
-		std::cout << "DFS Check" << std::endl;
+		//std::cout << "DFS Check" << std::endl;
 		if (cycleCheckF(relations))
 		{
 			relations.pop_back();
@@ -42,18 +41,24 @@ void createR(std::vector<int> & nodes, std::vector<std::pair<int, int>> & relati
 	}
 
 }
-//Sprawdza czy istnieje juz taka relacja
-bool exCheck(std::pair<int, int > rel, std::vector<std::pair<int, int>> & relations)
+bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2)
 {
-	for (int i = 0; i < relations.size(); i++)
+
+	if (node1 == node2)
 	{
-		if (rel == relations[i])
-			return 1;
-		if ((rel.first == relations[i].second) && (rel.second == relations[i].first))
-			return 1;
+		std::cout << "Nie mozna stworzyc takiej relacji" << std::endl;
+		return 1;
+	}
+	relations.push_back(std::make_pair(node1, node2));
+	if (cycleCheckF(relations))
+	{
+		relations.pop_back();
+		std::cout << "Relacja psuje graf." << std::endl;
+		return 1;
 	}
 	return 0;
 }
+//Sprawdza czy istnieje juz taka relacja
 bool exCheck(int value, const std::vector<int> & searched)
 {
 	for (int i = 0; i < searched.size(); i++)
@@ -68,7 +73,7 @@ bool cycleCheckF(const std::vector<std::pair<int, int>> & relations)
 	std::vector<std::pair<int, int>> first = cycleSearch(relations);
 	if (first.empty())
 	{
-		std::cout << "Nie mozna bylo znalezc wiercholka zerowego lub znaleziono krotka petle/multigraf." << std::endl;
+		//std::cout << "Nie mozna bylo znalezc wiercholka zerowego lub znaleziono krotka petle/multigraf." << std::endl;
 		return 1;
 	}
 	for (auto i : first)
@@ -85,9 +90,8 @@ bool cycleCheck(const std::vector<std::pair<int, int>> & relations, std::pair<in
 	std::vector<std::pair<int, int>> nSearched; // first to numer liczby, second to pozycja w relations
 	std::vector<int> searched;
 
-	nSearched.push_back(first);
+	nSearched = cycleFind(relations, first.first);
 	searched.push_back(first.first);
-	cycleFind(relations, nSearched);
 	if (cycleExist(relations, nSearched, searched))
 		return 1;
 	for (int i=0;i<nSearched.size();i++)
@@ -110,13 +114,6 @@ bool _cycleCheck(const std::vector<std::pair<int, int>> & relations, std::vector
 	return 0;
 }
 //wypisuje wszystkie relacje danego wierzcholka
-void cycleFind(const std::vector<std::pair<int, int>> & relations, std::vector<std::pair<int, int>> & nSearched)
-{
-	for (int i = 0; i < relations.size(); i++)
-		if (nSearched.back().first == relations[i].first)
-			if (nSearched.back().second != i)
-				nSearched.push_back(std::make_pair(relations[i].first, i));
-}
 std::vector<std::pair<int, int>> cycleFind(const std::vector<std::pair<int, int>> & relations, int first)
 {
 	std::vector<std::pair<int, int>> nSearched;
@@ -163,8 +160,8 @@ std::vector<std::pair<int, int>> cycleSearch(const std::vector<std::pair<int, in
 		}
 	}
 
-	if (first.empty())
-		std::cout << "Something broken" << std::endl;
+	//if (first.empty())
+		//std::cout << "Something broken" << std::endl;
 	return first;
 
 }
