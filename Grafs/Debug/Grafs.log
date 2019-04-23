@@ -1,17 +1,9 @@
-﻿  pch.cpp
-  AdjacencyListGraph.cpp
-  AdjacencyMatriceGraph.cpp
-  EdgeListGraph.cpp
-  Gen.cpp
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(5): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(61): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(94): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(108): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(117): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(134): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(137): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(151): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  GrafRepresentation.cpp
-  Grafs.cpp
-  Generowanie kodu...
+﻿  Gen.cpp
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(71): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(86): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(124): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(127): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(141): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(222): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   Grafs.vcxproj -> C:\Users\macie\Desktop\Programowanie\Grafy\Grafs\Debug\Grafs.exe

@@ -1,6 +1,6 @@
 #include "pch.h"
 
-bool createR(std::vector<std::pair<int, int>> & relations,int nodes)
+bool createR(std::vector<std::pair<int, int>> & relations,int nodes, bool cyclesearch)
 {
 	int node1, node2;
 	int check = 1, failsafe=nodes*nodes*nodes;
@@ -14,17 +14,18 @@ bool createR(std::vector<std::pair<int, int>> & relations,int nodes)
 		node2 = rand() % nodes;
 		if (node1 == node2) continue;
 		relations.push_back(std::make_pair(node1, node2));
-		if (cycleCheckF(relations))
-		{
-			relations.pop_back();
-			continue;
-		}
+		if (cyclesearch)
+			if (cycleCheckF(relations))
+			{
+				relations.pop_back();
+				continue;
+			}
 		check = 0;
 	}
 	return 0;
 }
 
-bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2)
+bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2, bool cyclesearch)
 {
 	if (node1 == node2)
 	{
@@ -32,12 +33,13 @@ bool createN(std::vector<std::pair<int, int>> & relations,int node1, int node2)
 		return 1;
 	}
 	relations.push_back(std::make_pair(node1, node2));
-	if (cycleCheckF(relations))
-	{
-		relations.pop_back();
-		std::cout << "Relacja psuje graf." << std::endl;
-		return 1;
-	}
+	if (cyclesearch)
+		if (cycleCheckF(relations))
+		{
+			relations.pop_back();
+			std::cout << "Relacja psuje graf." << std::endl;
+			return 1;
+		}
 	return 0;
 }
 
@@ -172,12 +174,18 @@ std::vector<std::pair<int, int>> loadGraf(size_t & number)
 	else
 		std::cout << "Dostêp zosta³ uzyskany." << std::endl;
 	int n, v, node1, node2;
+	char choice;
+	bool cycle = true;
+	std::cout << "Czy chcesz sprawdzac istnienie cykli?[y/n]" << std::endl;
+	std::cin >> choice;
+	if (choice == 'n')
+		cycle = false;
 	plik >> n >> v;
 	number = n;
 	for (int i = 0; i < v; i++)
 	{
 		plik >> node1 >> node2;
-		if (createN(graf, node1, node2))
+		if (createN(graf, node1, node2, cycle))
 		{
 			std::cout << "Wystapil blad podczas dodawania krawedzi do grafu" << std::endl;
 		}
@@ -189,6 +197,12 @@ std::vector<std::pair<int, int>> manualGraf(size_t & number)
 {
 	int num1 = 1, num2 = 2;
 	std::vector<std::pair<int, int>> graph;
+	char choice;
+	bool cycle = true;
+	std::cout << "Czy chcesz sprawdzac istnienie cykli?[y/n]" << std::endl;
+	std::cin >> choice;
+	if (choice == 'n')
+		cycle = false;
 	std::cout << "Podaj liczbe wierzcholkow." << std::endl;
 	std::cin >> number;
 	while (1)
@@ -197,7 +211,7 @@ std::vector<std::pair<int, int>> manualGraf(size_t & number)
 		std::cin >> num1 >> num2;
 		if (num1 == num2)
 			break;
-		if (createN(graph, num1, num2))
+		if (createN(graph, num1, num2, cycle))
 			std::cout << "Wystapil blad, relacja nie zostala dodana" << std::endl;
 	}
 	return graph;
@@ -209,9 +223,15 @@ std::vector<std::pair<int, int>> genGraf(int amount)
 	std::vector<std::pair<int, int>> relations;
 	int sizeR = amount * (amount - 1) / 2;
 	int i = 0;
+	char choice;
+	bool cycle = true;
+	std::cout << "Czy chcesz sprawdzac istnienie cykli?[y/n]" << std::endl;
+	std::cin >> choice;
+	if (choice == 'n')
+		cycle = false;
 	while (i < sizeR)
 	{
-		if (createR(relations, amount))
+		if (createR(relations, amount, cycle))
 		{
 			i = 0;
 			relations.clear();
