@@ -43,6 +43,9 @@ bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol
 	if (verticesCol[ver] == VerticesColor::black)
 		return true;
 
+	if (log)
+		std::cout << "Koloruje " << ver << " na szaro" << std::endl;
+
 	verticesCol[ver] = VerticesColor::grey;
 	auto neighbours = this->getNeighbours(ver);
 	for (auto x : neighbours)
@@ -50,6 +53,8 @@ bool GrafRepresentation::DFS(int ver, std::map<int, VerticesColor> & verticesCol
 		if (DFS(x, verticesCol, res, log) == false)
 			return false;
 	}
+	if (log)
+		std::cout << "Koloruje " << ver << " na czarno" << std::endl;
 	verticesCol[ver] = VerticesColor::black;
 	res.push_back(ver);
 	return true;

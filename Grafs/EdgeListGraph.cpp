@@ -31,3 +31,13 @@ std::vector<int> EdgeListGraph::getNeighbours(int v)const
 	}
 	return res;
 }
+
+void EdgeListGraph::show() const
+{
+	std::cout << "Graf w postaci listy krawedzi: " << std::endl;
+	for (auto x : edges)
+	{
+		std::cout << "[" << x.first << "," << x.second << "]" << " ";
+	}
+	std::cout << std::endl;
+}

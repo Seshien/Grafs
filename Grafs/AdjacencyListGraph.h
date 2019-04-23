@@ -7,6 +7,9 @@ public:
 	AdjacencyListGraph(const std::vector<std::pair<int, int>> & eL, size_t V);
 	~AdjacencyListGraph();
 
+	// Inherited via GrafRepresentation
+	virtual void show() const override;
+
 private:
 	std::vector<std::vector<int>> elListo;
 

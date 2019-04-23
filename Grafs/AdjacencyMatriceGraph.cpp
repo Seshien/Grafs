@@ -41,3 +41,17 @@ std::vector<int> AdjacencyMatriceGraph::getNeighbours(int v)const
 	}
 	return res;
 }
+
+void AdjacencyMatriceGraph::show() const
+{
+	std::cout << "Graf jako macierz sasiedztwa: " << std::endl;
+	for (size_t i = 0; i < matrix.size(); i++)
+	{
+		for (size_t j = 0; j < matrix[i].size(); j++)
+		{
+			std::cout << matrix[i][j] << "\t";
+		}
+		std::cout<<std::endl;
+	}
+	std::cout << std::endl;
+}

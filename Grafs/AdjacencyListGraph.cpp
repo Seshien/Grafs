@@ -29,3 +29,18 @@ std::vector<int> AdjacencyListGraph::getNeighbours(int v)const
 {
 	return elListo[v];
 }
+
+void AdjacencyListGraph::show() const
+{
+	std::cout << "Graf jak list sasiedztwa:" << std::endl;
+	for (size_t i = 0; i < elListo.size(); i++)
+	{
+		std::cout << i << ":\t";
+		for (size_t j = 0; j < elListo[i].size(); j++)
+		{
+			std::cout << elListo[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}

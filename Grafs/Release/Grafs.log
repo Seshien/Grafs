@@ -1,15 +1,18 @@
-﻿  Gen.cpp
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(69): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(84): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(104): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(122): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(125): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(139): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(208): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+﻿  pch.cpp
+  AdjacencyListGraph.cpp
+  AdjacencyMatriceGraph.cpp
+  EdgeListGraph.cpp
+  Gen.cpp
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(69): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(84): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(104): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(122): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(125): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(139): warning C4018: '<': signed/unsigned mismatch
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\gen.cpp(208): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GrafRepresentation.cpp
   Grafs.cpp
-  Trwa generowanie kodu
-  3 of 747 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Zakończono generowanie kodu
-  Grafs.vcxproj -> C:\Users\macie\Desktop\Programowanie\Grafy\Grafs\Release\Grafs.exe
+  Generating code
+  All 750 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Grafs.vcxproj -> D:\Dokumenty\Private\studia\II Semestr\Algorytmy itd\Grafs\Grafs\Release\Grafs.exe
