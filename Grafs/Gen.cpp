@@ -12,8 +12,6 @@ std::vector<std::pair<int, int>> gen(int amount)
 	}
 	for (auto i : relations)
 		std::cout << "Relacja " << i.first << " : " << i.second << std::endl;
-
-
 	std::cout << "Tworzenie gotowe" << std::endl;
 	return relations;
 }
@@ -172,4 +170,13 @@ bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::v
 		for (auto j : nSearched)
 			if (relations[j.second].second == i) return 1;
 	return 0;
+}
+
+std::vector<std::pair<int, int>> loadGraf()
+{
+	std::vector<std::pair<int, int>> graf;
+	std::fstream plik;
+	std::
+	std::cout << "Prosze podac nazwe pliku" << std::endl;
+
 }

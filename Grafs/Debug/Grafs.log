@@ -1,2 +1,17 @@
-﻿  Grafs.cpp
-  Grafs.vcxproj -> C:\Users\macie\Desktop\Programowanie\Grafy\Grafs\Debug\Grafs.exe
+﻿  pch.cpp
+  AdjacencyListGraph.cpp
+  AdjacencyMatriceGraph.cpp
+  EdgeListGraph.cpp
+  Gen.cpp
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(5): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(62): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(95): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(109): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(118): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(135): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(138): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(152): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(180): error C3083: "std" : symbol po lewej stronie "::" musi być typem
+  GrafRepresentation.cpp
+  Grafs.cpp
+  Generowanie kodu...
