@@ -1,18 +1,14 @@
-﻿  pch.cpp
-  AdjacencyListGraph.cpp
-  AdjacencyMatriceGraph.cpp
-  EdgeListGraph.cpp
-  Gen.cpp
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(3): error C2572: „createR”: ponowna definicja domyślnego argumentu: parametr 1
-  c:\users\macie\desktop\programowanie\grafy\grafs\gen.h(4): note: zobacz deklarację „createR”
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(28): error C2572: „createN”: ponowna definicja domyślnego argumentu: parametr 1
-  c:\users\macie\desktop\programowanie\grafy\grafs\gen.h(5): note: zobacz deklarację „createN”
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(71): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(86): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(124): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(127): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(141): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(222): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  GrafRepresentation.cpp
-  Grafs.cpp
+﻿  Gen.cpp
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(72): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(87): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(107): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(125): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(128): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(142): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(223): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Trwa generowanie kodu
+  6 of 751 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Zakończono generowanie kodu
+  Grafs.vcxproj -> C:\Users\macie\Desktop\Programowanie\Grafy\Grafs\Release\Grafs.exe
