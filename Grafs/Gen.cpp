@@ -193,6 +193,7 @@ std::vector<std::pair<int, int>> loadGraf(size_t & number)
 	return graf;
 }
 
+
 std::vector<std::pair<int, int>> manualGraf(size_t & number)
 {
 	int num1 = 1, num2 = 2;

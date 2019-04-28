@@ -1,9 +1,4 @@
-﻿  Gen.cpp
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(71): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(86): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(124): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(127): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(141): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\macie\desktop\programowanie\grafy\grafs\gen.cpp(222): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  Grafs.vcxproj -> C:\Users\macie\Desktop\Programowanie\Grafy\Grafs\Debug\Grafs.exe
+﻿  Grafs.cpp
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\grafs.cpp(6): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\dokumenty\private\studia\ii semestr\algorytmy itd\grafs\grafs\grafs.cpp(9): warning C4018: '<': signed/unsigned mismatch
+  Grafs.vcxproj -> D:\Dokumenty\Private\studia\II Semestr\Algorytmy itd\Grafs\Grafs\Debug\Grafs.exe

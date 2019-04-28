@@ -1,0 +1,6 @@
+Macierz_sasiedztwa_DFS: 0.0025824
+Macierz_sasiedztwa_DEL: 0.0039681
+Listy_nastepnikow_DFS: 0.0019363
+Listy_nastepnikow_DEL: 0.0023997
+Listy_krawedzi_DFS: 0.0038058
+Listy_krawedzi_DEL: 0.0079516

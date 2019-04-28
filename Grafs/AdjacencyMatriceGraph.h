@@ -10,6 +10,10 @@ public:
 	// Inherited via GrafRepresentation
 	virtual void show() const override;
 
+	bool addConnection(const std::pair<int, int> & c);
+
+	std::vector<std::pair<int, int>> toList();
+
 private:
 	std::vector<std::vector<int>> matrix;
 

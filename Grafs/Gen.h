@@ -19,6 +19,8 @@ bool cycleExist(const std::vector<std::pair<int, int>> & relations, const std::v
 
 std::vector<std::pair<int, int>> loadGraf(size_t & number);
 
+void saveGraf(const std::string filename, const std::vector<std::pair<int, int>> &);
+
 
 std::vector<std::pair<int, int>> manualGraf(size_t & number);
 

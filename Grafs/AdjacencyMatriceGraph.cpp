@@ -60,3 +60,28 @@ void AdjacencyMatriceGraph::show() const
 	}
 	std::cout << std::endl;
 }
+
+bool AdjacencyMatriceGraph::addConnection(const std::pair<int, int>& c)
+{
+	if (matrix[c.first][c.second] != 0)
+		return false;
+
+	matrix[c.first][c.second] = 1;
+	matrix[c.second][c.first] = -1;
+	return true;
+}
+
+
+std::vector<std::pair<int, int>> AdjacencyMatriceGraph::toList()
+{
+	std::vector<std::pair<int, int>> res;
+	for (size_t i = 0; i < matrix.size(); i++)
+	{
+		for (size_t j = 0; j < matrix[i].size(); j++)
+		{
+			if (matrix[i][j] == 1)
+				res.push_back(std::make_pair(i, j));
+		}
+	}
+	return res;
+}
