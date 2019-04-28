@@ -1,7 +1,7 @@
 #pragma once
 #include "pch.h"
 
-bool createR(std::vector<std::pair<int, int>> & relations, int nodes, bool cyclesearch = true);
+bool createR(std::vector<std::pair<int, int>> & relations, size_t nodes, bool cyclesearch = true);
 bool createN(std::vector<std::pair<int, int>> & relations, int node1, int node2, bool cyclesearch = true);
 
 bool cycleCheckF(const std::vector<std::pair<int, int>> & relations);

@@ -1,6 +1,6 @@
 #include "pch.h"
 
-bool createR(std::vector<std::pair<int, int>> & relations,int nodes, bool cyclesearch)
+bool createR(std::vector<std::pair<int, int>> & relations,size_t nodes, bool cyclesearch)
 {
 	int node1, node2;
 	int check = 1, failsafe=nodes*nodes*nodes;
@@ -14,8 +14,9 @@ bool createR(std::vector<std::pair<int, int>> & relations,int nodes, bool cycles
 		node2 = rand() % nodes;
 		if (node1 == node2) continue;
 		relations.push_back(std::make_pair(node1, node2));
+		AdjacencyListGraph listaNastepnikow{ relations, nodes };
 		if (cyclesearch)
-			if (cycleCheckF(relations))
+			if (listaNastepnikow.DFS_TopologicalSorting(false).empty())
 			{
 				relations.pop_back();
 				continue;
@@ -222,7 +223,8 @@ std::vector<std::pair<int, int>> genGraf(int amount)
 {
 	std::srand(time(NULL));
 	std::vector<std::pair<int, int>> relations;
-	int sizeR = amount * (amount - 1) / 2;
+	int sizeR = amount * (amount - 1) / 4;
+	size_t amountt = amount;
 	int i = 0;
 	char choice;
 	bool cycle = true;
@@ -232,7 +234,7 @@ std::vector<std::pair<int, int>> genGraf(int amount)
 		cycle = false;
 	while (i < sizeR)
 	{
-		if (createR(relations, amount, cycle))
+		if (createR(relations, amountt, cycle))
 		{
 			i = 0;
 			relations.clear();
